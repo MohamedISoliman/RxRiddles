@@ -13,6 +13,11 @@ I'm very open to having some more riddles. Especially some complex common use ca
 
 I want every riddle to be unique and have as little duplication as possible while also having some actual real-world use case for each riddle in mind. Something you can relate to and hopefully use in your everyday life.
 
+### Things to Remember
+- Scan operator it's a map but return the old and the new value for each emission.
+- Reduce is same as the Scan but it emits the last result, may it equals scan().takeLast()
+- There is a flatMap overload flatMap(mapper, resultSelector) which is useful when you want to map the result with some logic and have the result from the mapper and the flatMap input itself. 
+
 # License
 
 Copyright (C) 2018 Vanniktech - Niklas Baudy
