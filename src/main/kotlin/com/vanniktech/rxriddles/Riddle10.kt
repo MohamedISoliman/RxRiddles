@@ -8,7 +8,7 @@ object Riddle10 {
    *
    * Use case: Get some user data and perform a network request with the user data and have both data accessible afterwards.
    */
-  fun solve(first: Observable<Int>, function: (Int) -> Observable<String>): Observable<Pair<Int, String>> {
-    TODO()
-  }
+  fun solve(first: Observable<Int>,
+      function: (Int) -> Observable<String>): Observable<Pair<Int, String>> =
+      first.flatMap({ function.invoke(it) }, { t1, t2 -> t1 to t2 })
 }
