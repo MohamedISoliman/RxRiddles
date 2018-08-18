@@ -1,6 +1,7 @@
 package com.vanniktech.rxriddles
 
 import io.reactivex.Single
+import io.reactivex.functions.Predicate
 
 object Riddle14 {
   /**
@@ -8,7 +9,6 @@ object Riddle14 {
    *
    * Use case: Retry an operation for a number of times or until a valid error occurred.
    */
-  fun solve(source: Single<Unit>): Single<Unit> {
-    TODO()
-  }
+  fun solve(
+      source: Single<Unit>): Single<Unit> = source.retry(2) { t -> t !is IllegalArgumentException }
 }
