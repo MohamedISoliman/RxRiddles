@@ -1,6 +1,7 @@
 package com.vanniktech.rxriddles
 
 import io.reactivex.Observable
+import java.util.concurrent.TimeUnit.MILLISECONDS
 
 object Riddle11 {
   /**
@@ -8,7 +9,5 @@ object Riddle11 {
    *
    * Use case: Handle the click of a button right away but prevent double clicking by not handling multiple click events within a given time window.
    */
-  fun solve(source: Observable<Unit>): Observable<Unit> {
-    TODO()
-  }
+  fun solve(source: Observable<Unit>): Observable<Unit> = source.throttleFirst(300, MILLISECONDS)
 }
