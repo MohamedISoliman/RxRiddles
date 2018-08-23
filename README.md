@@ -16,7 +16,8 @@ I want every riddle to be unique and have as little duplication as possible whil
 ### Things to Remember
 - Scan operator it's a map but return the old and the new value for each emission.
 - Reduce is same as the Scan but it emits the last result, may it equals scan().takeLast()
-- There is a flatMap overload flatMap(mapper, resultSelector) which is useful when you want to map the result with some logic and have the result from the mapper and the flatMap input itself. 
+- There is a flatMap overload flatMap(mapper, resultSelector) which is useful when you want to map the result with some logic and have the result from the mapper and the flatMap input itself.
+- concat() vs concatEager(): concat start to subscribe respecting the order, waiting to complete the first then subscripe the second and etc .. concatEager() trigger  all sources subscriptions and wait the result respecting the order.
 
 # License
 
